@@ -20,14 +20,11 @@ A React package that simplifies data exporting and clipboard management. It prov
 - Copy any text to clipboard
 - Excel or Sheet to JSON converter
 
-### What's new on version 4.0.6
-- Added `onSuccess` and `onError` props to `ExportAsExcel`, `ExportAsPdf`, and `ExportAsCsv` component
-- Code optimizations 
-- Remove file upload component from this package, Instead I create another package [@siamf/upload](https://www.npmjs.com/package/@siamf/upload) with more functionality and options. See the docs [here](https://www.npmjs.com/package/@siamf/upload)
-- Rename the component `ExcelToJsonConverter` to `ExcelToJson`
-- Huge API change for `ExcelToJson` component. For more details, read the docs for this component.
-- React 19 Support
-- Package Update
+### What's new on version 4.1.0
+- Update `CopyTextClipboard` for managing copy status internally
+- Update `CopyToClipboard` for managing copy status internally
+- Now you will `isCopied` return props for both component
+- Added new props `resetDuration` for resetting time of copy status
 
 
 # Installation
@@ -81,8 +78,8 @@ import { ExportAsExcel, ExportAsPdf, ExportAsCsv, CopyToClipboard, CopyTextToCli
     headers={["CreatedBy", "Age", "Something Else"]}
 >
     {(props)=> (
-      <button {...props}>
-        Copy Document
+      <button onClick={props.onClick}>
+        {props.isCopied ? "Copied Document" : "Copy Document" }
       </button>
     )}
 </CopyToClipboard>
@@ -90,8 +87,8 @@ import { ExportAsExcel, ExportAsPdf, ExportAsCsv, CopyToClipboard, CopyTextToCli
 //Copy to clipboard (text)
 <CopyTextToClipboard text="Hello World">
     {(props)=> (
-      <button {...props}>
-        Copy Text
+      <button onClick={props.onClick}>
+        {props.isCopied ? "Copied Text" : "Copy Text"}
       </button>
     )}
 </CopyTextToClipboard>
@@ -355,6 +352,11 @@ You find this three type theme-
     <td> Funtion (Optional) </td>
     <td> When copy will be failed </td>
   </tr>
+  <tr>
+    <td> resetDuration </td>
+    <td> Number(Optional) </td>
+    <td> The time resetting copy status </td>
+  </tr>
 </table>
 
 ## CopyTextToClipboard
@@ -389,6 +391,11 @@ You find this three type theme-
     <td> onFailed </td>
     <td> Funtion (Optional) </td>
     <td> When copy will be failed </td>
+  </tr>
+  <tr>
+    <td> resetDuration </td>
+    <td> Number(Optional) </td>
+    <td> The time resetting copy status </td>
   </tr>
 </table>
 
