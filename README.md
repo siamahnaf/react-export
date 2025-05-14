@@ -20,7 +20,7 @@ A React package that simplifies data exporting and clipboard management. It prov
 - Copy any text to clipboard
 - Excel or Sheet to JSON converter
 
-### What's new on version 4.1.0
+### What's new on version 4.1.1
 - Update `CopyTextClipboard` for managing copy status internally
 - Update `CopyToClipboard` for managing copy status internally
 - Now you will `isCopied` return props for both component
