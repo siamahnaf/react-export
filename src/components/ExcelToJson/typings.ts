@@ -8,14 +8,14 @@ export interface ExportInterface {
     };
     isDragging: boolean;
     onFileUpload: () => void;
-    data: Array<any>;
+    data: Array<any> | undefined;
     file: File | null;
     error: boolean;
 }
 
 export interface Props {
     onRead: (data: Array<any>) => void;
-    value: Array<any>;
+    value?: Array<any>;
     children: (props: ExportInterface) => React.ReactNode;
     inputProps?: React.HTMLProps<HTMLInputElement>;
     onChange?: (file: File | null) => void;
