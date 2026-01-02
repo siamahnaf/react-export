@@ -1,6 +1,6 @@
 {
   "name": "@siamf/react-export",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "description": "A React package that simplifies data exporting and clipboard management. It provides react component for printing documents, exporting data as PDF, Excel, and CSV, as well as copying text and structured data to the clipboard.",
   "homepage": "https://github.com/siamahnaf/react-export",
   "main": "dist/cjs/index.js",
@@ -41,8 +41,8 @@
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
-    "react": "^18 || ^19",
-    "react-dom": "^18 || ^19"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "dependencies": {
     "jspdf": "^2.5.2",
